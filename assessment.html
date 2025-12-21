@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Care Assessment - KapwaCare | Free In-Home Assessment</title>
+    <meta name="description" content="Start your care journey with KapwaCare's free online assessment. Answer a few questions to help us create a personalized care plan for you or your loved one."/>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="KapwaCare Care Assessment"/>
+    <meta property="og:description" content="Start your free care assessment. We'll create a personalized care plan for your family."/>
+    <meta property="og:type" content="website"/>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <link rel="manifest" href="/site.webmanifest"/>
+    <meta name="theme-color" content="#28af60"/>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#28af60",
+                        "secondary": "#1d4ed8",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#131f18",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e2b24",
+                        "text-main": "#121714",
+                        "text-muted": "#668573",
+                        "border-light": "#dce4e0",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Georgia", "serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        input, select, button { touch-action: manipulation; }
+        .step { display: none; }
+        .step.active { display: block; }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-main dark:text-white antialiased">
+
+<!-- Main Container -->
+<div class="relative flex min-h-screen w-full flex-col max-w-lg mx-auto bg-white dark:bg-surface-dark shadow-xl border-x border-gray-100 dark:border-gray-800">
+
+    <!-- TopAppBar -->
+    <div class="sticky top-0 z-10 flex items-center bg-white dark:bg-surface-dark p-4 pb-2 justify-between border-b border-gray-100 dark:border-gray-800">
+        <a href="index.html" class="text-text-main dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors" aria-label="Go back">
+            <span class="material-symbols-outlined">arrow_back_ios_new</span>
+        </a>
+        <h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Care Assessment</h2>
+    </div>
+
+    <!-- Progress Bar Section -->
+    <div class="flex flex-col gap-3 px-6 pt-4 pb-2">
+        <div class="flex gap-6 justify-between items-center">
+            <p id="step-indicator" class="text-text-main dark:text-white text-sm font-medium">Step 1 of 4</p>
+            <span id="step-label" class="text-text-muted dark:text-primary/80 text-xs font-semibold uppercase tracking-wide">Basic Info</span>
+        </div>
+        <div class="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+            <div id="progress-bar" class="h-full rounded-full bg-primary transition-all duration-500 ease-out" style="width: 25%;"></div>
+        </div>
+    </div>
+
+    <!-- Form Content -->
+    <form id="assessment-form" class="flex-1 overflow-y-auto px-6 pb-32">
+
+        <!-- Step 1: Basic Info -->
+        <div class="step active" data-step="1">
+            <div class="pt-6 pb-6">
+                <h2 class="text-text-main dark:text-white tracking-tight text-2xl font-bold leading-tight text-left mb-2 font-serif">Basic Information</h2>
+                <p class="text-text-muted dark:text-gray-400 text-base">Let's start with contact details so we can reach you about your care plan.</p>
+            </div>
+
+            <div class="flex flex-col gap-6">
+                <!-- Full Name -->
+                <label class="flex flex-col gap-2 group">
+                    <span class="text-text-main dark:text-white text-base font-medium">Full Name <span class="text-red-500">*</span></span>
+                    <div class="relative">
+                        <input
+                            type="text"
+                            name="name"
+                            required
+                            class="form-input flex w-full rounded-xl text-text-main dark:text-white border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary/20 h-14 placeholder:text-text-muted/70 p-4 text-base transition-all"
+                            placeholder="e.g. Jane Doe"
+                        />
+                        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-primary opacity-0 group-focus-within:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined">person</span>
+                        </span>
+                    </div>
+                </label>
+
+                <!-- Phone Number -->
+                <label class="flex flex-col gap-2 group">
+                    <span class="text-text-main dark:text-white text-base font-medium">Phone Number <span class="text-red-500">*</span></span>
+                    <div class="relative">
+                        <input
+                            type="tel"
+                            name="phone"
+                            required
+                            class="form-input flex w-full rounded-xl text-text-main dark:text-white border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary/20 h-14 placeholder:text-text-muted/70 p-4 pl-12 text-base transition-all"
+                            placeholder="(403) 555-0123"
+                        />
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted group-focus-within:text-primary transition-colors">
+                            <span class="material-symbols-outlined">call</span>
+                        </span>
+                    </div>
+                </label>
+
+                <!-- Email Address -->
+                <label class="flex flex-col gap-2 group">
+                    <span class="text-text-main dark:text-white text-base font-medium">Email Address <span class="text-red-500">*</span></span>
+                    <div class="relative">
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                            class="form-input flex w-full rounded-xl text-text-main dark:text-white border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary/20 h-14 placeholder:text-text-muted/70 p-4 pl-12 text-base transition-all"
+                            placeholder="jane@example.com"
+                        />
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted group-focus-within:text-primary transition-colors">
+                            <span class="material-symbols-outlined">mail</span>
+                        </span>
+                    </div>
+                </label>
+
+                <!-- How did you hear about us? -->
+                <label class="flex flex-col gap-2 group">
+                    <span class="text-text-main dark:text-white text-base font-medium">How did you hear about us?</span>
+                    <div class="relative">
+                        <select
+                            name="referral"
+                            class="form-select flex w-full rounded-xl text-text-main dark:text-white border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary/20 h-14 p-4 text-base transition-all appearance-none cursor-pointer"
+                        >
+                            <option value="">Select an option</option>
+                            <option value="doctor">Doctor Referral</option>
+                            <option value="friend">Friend or Family</option>
+                            <option value="social">Social Media</option>
+                            <option value="search">Google Search</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </span>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <!-- Step 2: Who Needs Care -->
+        <div class="step" data-step="2">
+            <div class="pt-6 pb-6">
+                <h2 class="text-text-main dark:text-white tracking-tight text-2xl font-bold leading-tight text-left mb-2 font-serif">Who Needs Care?</h2>
+                <p class="text-text-muted dark:text-gray-400 text-base">Tell us about the person who will receive care.</p>
+            </div>
+
+            <div class="flex flex-col gap-6">
+                <!-- Care Recipient -->
+                <label class="flex flex-col gap-2">
+                    <span class="text-text-main dark:text-white text-base font-medium">I'm seeking care for: <span class="text-red-500">*</span></span>
+                    <div class="relative">
+                        <select
+                            name="care_for"
+                            required
+                            class="form-select flex w-full rounded-xl text-text-main dark:text-white border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary/20 h-14 p-4 text-base transition-all appearance-none cursor-pointer"
+                        >
+                            <option value="">Select relationship</option>
+                            <option value="self">Myself</option>
+                            <option value="parent">My Parent</option>
+                            <option value="spouse">My Spouse/Partner</option>
+                            <option value="grandparent">My Grandparent</option>
+                            <option value="sibling">My Sibling</option>
+                            <option value="other">Someone Else</option>
+                        </select>
+                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </span>
+                    </div>
+                </label>
+
+                <!-- Age Range -->
+                <label class="flex flex-col gap-2">
+                    <span class="text-text-main dark:text-white text-base font-medium">Age range of the person needing care:</span>
+                    <div class="relative">
+                        <select
+                            name="age_range"
+                            class="form-select flex w-full rounded-xl text-text-main dark:text-white border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary/20 h-14 p-4 text-base transition-all appearance-none cursor-pointer"
+                        >
+                            <option value="">Select age range</option>
+                            <option value="18-40">18-40 years</option>
+                            <option value="41-60">41-60 years</option>
+                            <option value="61-75">61-75 years</option>
+                            <option value="76-85">76-85 years</option>
+                            <option value="86+">86+ years</option>
+                        </select>
+                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </span>
+                    </div>
+                </label>
+
+                <!-- Living Situation -->
+                <label class="flex flex-col gap-2">
+                    <span class="text-text-main dark:text-white text-base font-medium">Current living situation:</span>
+                    <div class="relative">
+                        <select
+                            name="living_situation"
+                            class="form-select flex w-full rounded-xl text-text-main dark:text-white border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary/20 h-14 p-4 text-base transition-all appearance-none cursor-pointer"
+                        >
+                            <option value="">Select situation</option>
+                            <option value="alone">Lives alone</option>
+                            <option value="spouse">Lives with spouse/partner</option>
+                            <option value="family">Lives with family</option>
+                            <option value="facility">Currently in a facility</option>
+                            <option value="hospital">Currently hospitalized</option>
+                        </select>
+                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </span>
+                    </div>
+                </label>
+
+                <!-- Location -->
+                <label class="flex flex-col gap-2 group">
+                    <span class="text-text-main dark:text-white text-base font-medium">City/Neighborhood:</span>
+                    <div class="relative">
+                        <input
+                            type="text"
+                            name="location"
+                            class="form-input flex w-full rounded-xl text-text-main dark:text-white border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary/20 h-14 placeholder:text-text-muted/70 p-4 pl-12 text-base transition-all"
+                            placeholder="e.g. Calgary SW, Airdrie"
+                        />
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted group-focus-within:text-primary transition-colors">
+                            <span class="material-symbols-outlined">location_on</span>
+                        </span>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <!-- Step 3: Care Needs -->
+        <div class="step" data-step="3">
+            <div class="pt-6 pb-6">
+                <h2 class="text-text-main dark:text-white tracking-tight text-2xl font-bold leading-tight text-left mb-2 font-serif">Care Needs</h2>
+                <p class="text-text-muted dark:text-gray-400 text-base">What kind of support are you looking for?</p>
+            </div>
+
+            <div class="flex flex-col gap-6">
+                <!-- Services Needed (Checkboxes) -->
+                <div class="flex flex-col gap-3">
+                    <span class="text-text-main dark:text-white text-base font-medium mb-1">Services needed (select all that apply):</span>
+
+                    <label class="flex items-center gap-3 p-4 rounded-xl border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark cursor-pointer hover:border-primary transition-colors">
+                        <input type="checkbox" name="services[]" value="companionship" class="w-5 h-5 rounded border-border-light text-primary focus:ring-primary"/>
+                        <span class="material-symbols-outlined text-primary">volunteer_activism</span>
+                        <span class="font-medium">Companionship & Socializing</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 p-4 rounded-xl border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark cursor-pointer hover:border-primary transition-colors">
+                        <input type="checkbox" name="services[]" value="personal-care" class="w-5 h-5 rounded border-border-light text-primary focus:ring-primary"/>
+                        <span class="material-symbols-outlined text-primary">personal_injury</span>
+                        <span class="font-medium">Personal Care (bathing, grooming)</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 p-4 rounded-xl border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark cursor-pointer hover:border-primary transition-colors">
+                        <input type="checkbox" name="services[]" value="homemaking" class="w-5 h-5 rounded border-border-light text-primary focus:ring-primary"/>
+                        <span class="material-symbols-outlined text-primary">home</span>
+                        <span class="font-medium">Homemaking (meals, housekeeping)</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 p-4 rounded-xl border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark cursor-pointer hover:border-primary transition-colors">
+                        <input type="checkbox" name="services[]" value="mobility" class="w-5 h-5 rounded border-border-light text-primary focus:ring-primary"/>
+                        <span class="material-symbols-outlined text-primary">accessibility_new</span>
+                        <span class="font-medium">Mobility Assistance</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 p-4 rounded-xl border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark cursor-pointer hover:border-primary transition-colors">
+                        <input type="checkbox" name="services[]" value="dementia" class="w-5 h-5 rounded border-border-light text-primary focus:ring-primary"/>
+                        <span class="material-symbols-outlined text-primary">psychology</span>
+                        <span class="font-medium">Dementia / Memory Care</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 p-4 rounded-xl border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark cursor-pointer hover:border-primary transition-colors">
+                        <input type="checkbox" name="services[]" value="respite" class="w-5 h-5 rounded border-border-light text-primary focus:ring-primary"/>
+                        <span class="material-symbols-outlined text-primary">hourglass_top</span>
+                        <span class="font-medium">Respite Care (caregiver relief)</span>
+                    </label>
+                </div>
+
+                <!-- Hours per week -->
+                <label class="flex flex-col gap-2">
+                    <span class="text-text-main dark:text-white text-base font-medium">Estimated hours needed per week:</span>
+                    <div class="relative">
+                        <select
+                            name="hours_per_week"
+                            class="form-select flex w-full rounded-xl text-text-main dark:text-white border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary/20 h-14 p-4 text-base transition-all appearance-none cursor-pointer"
+                        >
+                            <option value="">Not sure yet</option>
+                            <option value="3-6">3-6 hours/week</option>
+                            <option value="7-15">7-15 hours/week</option>
+                            <option value="16-30">16-30 hours/week</option>
+                            <option value="30+">30+ hours/week</option>
+                            <option value="live-in">Live-in care</option>
+                        </select>
+                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </span>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <!-- Step 4: Additional Info & Submit -->
+        <div class="step" data-step="4">
+            <div class="pt-6 pb-6">
+                <h2 class="text-text-main dark:text-white tracking-tight text-2xl font-bold leading-tight text-left mb-2 font-serif">Additional Details</h2>
+                <p class="text-text-muted dark:text-gray-400 text-base">Any other information that would help us understand your needs?</p>
+            </div>
+
+            <div class="flex flex-col gap-6">
+                <!-- Preferred Language -->
+                <label class="flex flex-col gap-2">
+                    <span class="text-text-main dark:text-white text-base font-medium">Preferred language for caregiver:</span>
+                    <div class="relative">
+                        <select
+                            name="language"
+                            class="form-select flex w-full rounded-xl text-text-main dark:text-white border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary/20 h-14 p-4 text-base transition-all appearance-none cursor-pointer"
+                        >
+                            <option value="english">English</option>
+                            <option value="tagalog">Tagalog</option>
+                            <option value="french">French</option>
+                            <option value="mandarin">Mandarin</option>
+                            <option value="cantonese">Cantonese</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </span>
+                    </div>
+                </label>
+
+                <!-- When to start -->
+                <label class="flex flex-col gap-2">
+                    <span class="text-text-main dark:text-white text-base font-medium">When would you like to start?</span>
+                    <div class="relative">
+                        <select
+                            name="start_time"
+                            class="form-select flex w-full rounded-xl text-text-main dark:text-white border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary/20 h-14 p-4 text-base transition-all appearance-none cursor-pointer"
+                        >
+                            <option value="">Select timeframe</option>
+                            <option value="asap">As soon as possible</option>
+                            <option value="1-2-weeks">Within 1-2 weeks</option>
+                            <option value="1-month">Within 1 month</option>
+                            <option value="exploring">Just exploring options</option>
+                        </select>
+                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </span>
+                    </div>
+                </label>
+
+                <!-- Additional notes -->
+                <label class="flex flex-col gap-2">
+                    <span class="text-text-main dark:text-white text-base font-medium">Anything else we should know?</span>
+                    <textarea
+                        name="notes"
+                        rows="4"
+                        class="w-full rounded-xl text-text-main dark:text-white border border-border-light dark:border-gray-600 bg-white dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary/20 placeholder:text-text-muted/70 p-4 text-base transition-all resize-none"
+                        placeholder="Special requirements, health conditions, preferences..."
+                    ></textarea>
+                </label>
+
+                <!-- Privacy Consent -->
+                <label class="flex items-start gap-3 cursor-pointer group">
+                    <input
+                        type="checkbox"
+                        name="privacy_consent"
+                        required
+                        class="mt-1 w-5 h-5 rounded border-border-light text-primary focus:ring-primary bg-white dark:bg-background-dark"
+                    />
+                    <span class="text-sm text-text-muted dark:text-gray-400 leading-snug group-hover:text-text-main dark:group-hover:text-white transition-colors">
+                        I agree to the <a href="#" class="text-primary hover:underline font-medium">Privacy Policy</a> and consent to being contacted by KapwaCare about my care needs. <span class="text-red-500">*</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Success Message (hidden by default) -->
+        <div id="success-step" class="step">
+            <div class="pt-12 pb-6 text-center">
+                <div class="w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-6">
+                    <span class="material-symbols-outlined text-primary text-5xl">check_circle</span>
+                </div>
+                <h2 class="text-text-main dark:text-white tracking-tight text-2xl font-bold leading-tight mb-3 font-serif">Thank You!</h2>
+                <p class="text-text-muted dark:text-gray-400 text-base mb-8">We've received your assessment. A care coordinator will contact you within 1 hour to discuss your personalized care plan.</p>
+                <a href="index.html" class="inline-flex items-center justify-center rounded-xl bg-primary hover:bg-green-600 text-white font-bold py-4 px-8 transition-colors">
+                    Return Home
+                </a>
+            </div>
+        </div>
+    </form>
+
+    <!-- Sticky Footer Navigation Buttons -->
+    <div id="nav-buttons" class="fixed bottom-0 left-0 right-0 z-20 flex gap-3 justify-center p-4 bg-white/95 dark:bg-surface-dark/95 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 max-w-lg mx-auto">
+        <button type="button" id="prev-btn" class="hidden flex-1 items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 py-4 px-6 text-base font-bold text-text-main dark:text-white transition-colors hover:bg-gray-200 dark:hover:bg-gray-700">
+            <span class="material-symbols-outlined mr-2">arrow_back</span>
+            Back
+        </button>
+        <button type="button" id="next-btn" class="flex-1 flex items-center justify-center rounded-xl bg-primary py-4 px-6 text-base font-bold text-white shadow-lg shadow-primary/30 transition-all hover:bg-green-600 active:scale-[0.98]">
+            <span>Continue</span>
+            <span class="material-symbols-outlined ml-2">arrow_forward</span>
+        </button>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    const form = document.getElementById('assessment-form');
+    const steps = document.querySelectorAll('.step[data-step]');
+    const successStep = document.getElementById('success-step');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const progressBar = document.getElementById('progress-bar');
+    const stepIndicator = document.getElementById('step-indicator');
+    const stepLabel = document.getElementById('step-label');
+    const navButtons = document.getElementById('nav-buttons');
+
+    const stepLabels = ['Basic Info', 'Recipient', 'Care Needs', 'Submit'];
+    const totalSteps = steps.length;
+    let currentStep = 1;
+
+    function updateUI() {
+        // Update step visibility
+        steps.forEach(step => {
+            step.classList.remove('active');
+            if (parseInt(step.dataset.step) === currentStep) {
+                step.classList.add('active');
+            }
+        });
+
+        // Update progress bar
+        const progress = (currentStep / totalSteps) * 100;
+        progressBar.style.width = `${progress}%`;
+
+        // Update indicators
+        stepIndicator.textContent = `Step ${currentStep} of ${totalSteps}`;
+        stepLabel.textContent = stepLabels[currentStep - 1];
+
+        // Update buttons
+        if (currentStep === 1) {
+            prevBtn.classList.add('hidden');
+            prevBtn.classList.remove('flex');
+        } else {
+            prevBtn.classList.remove('hidden');
+            prevBtn.classList.add('flex');
+        }
+
+        if (currentStep === totalSteps) {
+            nextBtn.innerHTML = '<span class="material-symbols-outlined mr-2">send</span><span>Submit Assessment</span>';
+        } else {
+            nextBtn.innerHTML = '<span>Continue</span><span class="material-symbols-outlined ml-2">arrow_forward</span>';
+        }
+    }
+
+    function validateCurrentStep() {
+        const currentStepEl = document.querySelector(`.step[data-step="${currentStep}"]`);
+        const requiredFields = currentStepEl.querySelectorAll('[required]');
+
+        for (const field of requiredFields) {
+            if (!field.value.trim()) {
+                field.focus();
+                field.classList.add('border-red-500');
+                return false;
+            }
+            field.classList.remove('border-red-500');
+        }
+        return true;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        if (currentStep > 1) {
+            currentStep--;
+            updateUI();
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (!validateCurrentStep()) return;
+
+        if (currentStep < totalSteps) {
+            currentStep++;
+            updateUI();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            // Submit form
+            steps.forEach(step => step.classList.remove('active'));
+            successStep.classList.add('active');
+            navButtons.classList.add('hidden');
+            progressBar.style.width = '100%';
+            stepIndicator.textContent = 'Complete!';
+            stepLabel.textContent = 'Thank You';
+        }
+    });
+
+    updateUI();
+</script>
+</body>
+</html>

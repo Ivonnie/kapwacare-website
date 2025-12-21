@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>KapwaCare - Compassionate Home Care in Calgary | Kapwa Philosophy</title>
+    <meta name="description" content="KapwaCare provides compassionate, tech-enabled home care services in Calgary. Personal care, companionship, respite care, and more. Rooted in the Filipino philosophy of Kapwa - shared humanity."/>
+    <meta name="keywords" content="home care Calgary, senior care, personal care, companionship, respite care, Filipino care, Kapwa"/>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="KapwaCare - Compassionate Home Care in Calgary"/>
+    <meta property="og:description" content="Care rooted in shared humanity. Personal care, companionship, and respite services for Calgary families."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://kapwacare.ca"/>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <link rel="manifest" href="/site.webmanifest"/>
+    <meta name="theme-color" content="#28af60"/>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#28af60",
+                        "secondary": "#1d4ed8",
+                        "background-light": "#ffffff",
+                        "background-dark": "#131f18",
+                        "surface-light": "#f6f8f7",
+                        "surface-dark": "#1e2b24",
+                        "text-main": "#121714",
+                        "text-muted": "#668573",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Georgia", "serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'floating': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+
+    <!-- Schema.org LocalBusiness markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "KapwaCare",
+        "description": "Compassionate, tech-enabled home care services in Calgary",
+        "url": "https://kapwacare.ca",
+        "telephone": "(403) 555-0123",
+        "email": "hello@kapwacare.ca",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Care Ave SW",
+            "addressLocality": "Calgary",
+            "addressRegion": "AB",
+            "postalCode": "T2P 1J9",
+            "addressCountry": "CA"
+        },
+        "areaServed": "Calgary, Alberta",
+        "priceRange": "$$"
+    }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased selection:bg-primary/30">
+
+<!-- Skip Navigation for Accessibility -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-lg z-50">Skip to main content</a>
+
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 bg-white/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
+    <div class="flex items-center justify-between px-4 py-3 max-w-6xl mx-auto w-full">
+        <a href="index.html" class="flex items-center">
+            <img src="images/kapwacare-wordmark.svg" alt="KapwaCare" class="h-8 w-auto" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
+            <a href="index.html" class="text-sm font-medium text-primary">Home</a>
+            <a href="about.html" class="text-sm font-medium text-text-main dark:text-white hover:text-primary transition-colors">About</a>
+            <a href="services.html" class="text-sm font-medium text-text-main dark:text-white hover:text-primary transition-colors">Services</a>
+            <a href="pricing.html" class="text-sm font-medium text-text-main dark:text-white hover:text-primary transition-colors">Pricing</a>
+            <a href="contact.html" class="text-sm font-medium text-text-main dark:text-white hover:text-primary transition-colors">Contact</a>
+            <a href="contact.html" class="bg-primary hover:bg-green-600 text-white font-semibold text-sm px-4 py-2 rounded-lg transition-colors">Free Assessment</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-text-main dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors" aria-label="Open menu" aria-expanded="false">
+            <span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+        </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 px-4 py-4" aria-label="Mobile navigation">
+        <div class="flex flex-col gap-3">
+            <a href="index.html" class="text-base font-medium text-primary py-2">Home</a>
+            <a href="about.html" class="text-base font-medium text-text-main dark:text-white py-2">About</a>
+            <a href="services.html" class="text-base font-medium text-text-main dark:text-white py-2">Services</a>
+            <a href="pricing.html" class="text-base font-medium text-text-main dark:text-white py-2">Pricing</a>
+            <a href="contact.html" class="text-base font-medium text-text-main dark:text-white py-2">Contact</a>
+            <a href="contact.html" class="bg-primary hover:bg-green-600 text-white font-bold text-base px-4 py-3 rounded-lg text-center transition-colors mt-2">Free Assessment</a>
+        </div>
+    </nav>
+</header>
+
+<main id="main-content" class="flex flex-col w-full">
+    <!-- Hero Section -->
+    <section class="relative w-full min-h-[600px] flex flex-col justify-end pb-16 px-4 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10 z-10"></div>
+            <img
+                alt="Caregiver smiling and holding hands with a client in a warm home setting"
+                class="w-full h-full object-cover object-center"
+                src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1200&q=80"
+                loading="eager"
+            />
+        </div>
+
+        <div class="relative z-20 flex flex-col gap-5 text-center items-center max-w-3xl mx-auto">
+            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-[1.1] tracking-tight drop-shadow-sm">
+                Care for Everyone, Rooted in Shared Humanity
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl font-medium max-w-xl leading-snug">
+                Compassionate, tech-enabled home care services in Calgary. Built on the Filipino philosophy of <em>Kapwa</em> - we treat every client like family.
+            </p>
+            <div class="flex flex-col sm:flex-row w-full sm:w-auto gap-3 mt-4">
+                <a href="contact.html" class="w-full sm:w-auto h-12 bg-primary hover:bg-green-600 text-white font-bold text-base rounded-xl shadow-lg active:scale-[0.98] transition-all flex items-center justify-center gap-2 px-8">
+                    Schedule a Free Assessment
+                </a>
+                <a href="services.html" class="w-full sm:w-auto h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/40 text-white font-semibold text-base rounded-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 px-8">
+                    Explore Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-6 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-background-dark">
+        <h2 class="sr-only">Trusted Partners</h2>
+        <p class="text-text-muted dark:text-gray-400 text-xs font-bold uppercase tracking-widest text-center mb-4">Trusted by families across Calgary</p>
+        <div class="flex overflow-x-auto hide-scrollbar gap-8 px-4 items-center justify-center opacity-60 grayscale">
+            <div class="shrink-0 flex items-center gap-2">
+                <span class="material-symbols-outlined">verified_user</span>
+                <span class="font-semibold">Licensed</span>
+            </div>
+            <div class="shrink-0 flex items-center gap-2">
+                <span class="material-symbols-outlined">policy</span>
+                <span class="font-semibold">Insured</span>
+            </div>
+            <div class="shrink-0 flex items-center gap-2">
+                <span class="material-symbols-outlined">security</span>
+                <span class="font-semibold">Bonded</span>
+            </div>
+            <div class="shrink-0 flex items-center gap-2">
+                <span class="material-symbols-outlined">workspace_premium</span>
+                <span class="font-semibold">Top Rated</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-16 px-4 bg-surface-light dark:bg-surface-dark">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-text-main dark:text-white mb-2">Our Services</h2>
+                    <p class="text-text-muted dark:text-gray-400 max-w-xl">Comprehensive care solutions tailored to your unique needs. We serve adults and seniors of all backgrounds.</p>
+                </div>
+                <a href="services.html" class="text-primary font-semibold text-sm flex items-center hover:underline">
+                    View all services <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Card 1 -->
+                <div class="group bg-white dark:bg-background-dark p-6 rounded-xl shadow-card border-t-4 border-primary hover:shadow-lg transition-shadow">
+                    <div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">personal_injury</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 dark:text-white">Personal Care</h3>
+                    <p class="text-sm text-text-muted dark:text-gray-400 leading-relaxed">Assistance with hygiene, mobility, grooming, and daily personal routines with dignity.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group bg-white dark:bg-background-dark p-6 rounded-xl shadow-card border-t-4 border-primary hover:shadow-lg transition-shadow">
+                    <div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">volunteer_activism</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 dark:text-white">Companionship</h3>
+                    <p class="text-sm text-text-muted dark:text-gray-400 leading-relaxed">Social engagement, conversation, and emotional support to combat loneliness.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group bg-white dark:bg-background-dark p-6 rounded-xl shadow-card border-t-4 border-primary hover:shadow-lg transition-shadow">
+                    <div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">home</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 dark:text-white">Homemaking</h3>
+                    <p class="text-sm text-text-muted dark:text-gray-400 leading-relaxed">Light housekeeping, meal preparation, laundry, and home organization.</p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="group bg-white dark:bg-background-dark p-6 rounded-xl shadow-card border-t-4 border-primary hover:shadow-lg transition-shadow">
+                    <div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">hourglass_top</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 dark:text-white">Respite Care</h3>
+                    <p class="text-sm text-text-muted dark:text-gray-400 leading-relaxed">Temporary relief for family caregivers. Take a break while we care for your loved one.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why KapwaCare Section -->
+    <section class="py-16 px-4 bg-white dark:bg-background-dark">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-text-main dark:text-white mb-8 text-center">Why Families Choose Us</h2>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="rounded-2xl overflow-hidden shadow-md">
+                    <img
+                        alt="A diverse group of healthcare professionals standing together smiling"
+                        class="w-full h-64 md:h-80 object-cover"
+                        src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&q=80"
+                        loading="lazy"
+                    />
+                </div>
+
+                <div class="flex flex-col gap-6">
+                    <div class="flex gap-4 items-start">
+                        <div class="shrink-0 size-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined">verified_user</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-text-main dark:text-white">Vetted Caregivers</h3>
+                            <p class="text-text-muted dark:text-gray-400 text-sm leading-relaxed mt-1">Every caregiver undergoes rigorous background checks, training, and continuous professional development.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 items-start">
+                        <div class="shrink-0 size-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined">smartphone</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-text-main dark:text-white">Tech-Enabled Updates</h3>
+                            <p class="text-text-muted dark:text-gray-400 text-sm leading-relaxed mt-1">Stay informed with real-time updates on your loved one's care through our family portal.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 items-start">
+                        <div class="shrink-0 size-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-text-main dark:text-white">Kapwa Philosophy</h3>
+                            <p class="text-text-muted dark:text-gray-400 text-sm leading-relaxed mt-1">Rooted in the Filipino concept of shared humanity. We treat every client like family, not a transaction.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 items-start">
+                        <div class="shrink-0 size-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined">support_agent</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-text-main dark:text-white">Responsive Support</h3>
+                            <p class="text-text-muted dark:text-gray-400 text-sm leading-relaxed mt-1">Our care coordination team is always available to answer questions and adjust care plans.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-surface-light dark:bg-surface-dark overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-text-main dark:text-white mb-8">Hear from Our Community</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-white dark:bg-background-dark p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div class="flex items-center gap-1 text-yellow-400 mb-3">
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                    </div>
+                    <p class="text-text-main dark:text-gray-200 text-sm leading-relaxed italic mb-4">"The best care for my mom. The team at KapwaCare truly treats their clients like family. I can sleep easy knowing she's in good hands."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">SJ</div>
+                        <div>
+                            <p class="font-bold text-sm text-text-main dark:text-white">Sarah J.</p>
+                            <p class="text-xs text-text-muted">Daughter of Client</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white dark:bg-background-dark p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div class="flex items-center gap-1 text-yellow-400 mb-3">
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                    </div>
+                    <p class="text-text-main dark:text-gray-200 text-sm leading-relaxed italic mb-4">"Professional, punctual, and incredibly kind. The updates through their portal give me peace of mind while I'm at work."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">DC</div>
+                        <div>
+                            <p class="font-bold text-sm text-text-main dark:text-white">David C.</p>
+                            <p class="text-xs text-text-muted">Son of Client</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white dark:bg-background-dark p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div class="flex items-center gap-1 text-yellow-400 mb-3">
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                    </div>
+                    <p class="text-text-main dark:text-gray-200 text-sm leading-relaxed italic mb-4">"As a new mom recovering from surgery, KapwaCare was a lifesaver. Their caregivers helped with everything while I healed."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">MR</div>
+                        <div>
+                            <p class="font-bold text-sm text-text-main dark:text-white">Maria R.</p>
+                            <p class="text-xs text-text-muted">Post-Op Recovery Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Preview -->
+    <section class="py-16 px-4 bg-white dark:bg-background-dark">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-text-main dark:text-white mb-2">Transparent Pricing</h2>
+            <p class="text-text-muted text-base mb-8">No hidden fees. Flexible plans to suit your needs.</p>
+
+            <div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-8 border border-gray-100 dark:border-gray-800">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="flex justify-between items-center p-4 bg-white dark:bg-background-dark rounded-xl">
+                        <div class="text-left">
+                            <p class="font-bold text-lg dark:text-white">Hourly Care</p>
+                            <p class="text-xs text-text-muted">Flexible scheduling</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm text-text-muted">Starting at</p>
+                            <p class="text-2xl font-bold text-primary">$32<span class="text-sm font-normal text-text-muted">/hr</span></p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center p-4 bg-white dark:bg-background-dark rounded-xl">
+                        <div class="text-left">
+                            <p class="font-bold text-lg dark:text-white">Live-in Care</p>
+                            <p class="text-xs text-text-muted">24/7 Assistance</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm text-text-muted">Starting at</p>
+                            <p class="text-2xl font-bold text-primary">$280<span class="text-sm font-normal text-text-muted">/day</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="pricing.html" class="inline-flex items-center justify-center w-full md:w-auto py-3 px-8 border-2 border-secondary text-secondary hover:bg-secondary hover:text-white rounded-lg font-bold text-sm transition-colors">
+                    View Full Price List
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 px-4 bg-primary text-white text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Ready to Get Started?</h2>
+            <p class="text-green-50 text-lg mb-8">Schedule your free in-home assessment today and let us create a personalized care plan for your loved one.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="h-14 bg-white text-primary font-bold text-lg rounded-xl shadow-lg active:scale-[0.98] transition-all flex items-center justify-center px-8">
+                    Book Free Assessment
+                </a>
+                <a href="tel:+14035550123" class="h-14 bg-green-700/40 text-white border border-white/20 font-bold text-lg rounded-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 px-8">
+                    <span class="material-symbols-outlined">call</span>
+                    (403) 555-0123
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-50 dark:bg-gray-900 pt-12 pb-8 px-4 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+            <!-- Logo & Desc -->
+            <div class="md:col-span-2">
+                <div class="mb-4">
+                    <img src="images/kapwacare-wordmark.svg" alt="KapwaCare" class="h-8 w-auto" />
+                </div>
+                <p class="text-text-muted text-sm leading-relaxed max-w-sm mb-4">
+                    Providing compassionate, high-quality home care services to families in Calgary and surrounding areas. Rooted in the Filipino philosophy of Kapwa - shared humanity.
+                </p>
+                <p class="text-text-muted text-sm">
+                    <strong>Serving:</strong> Calgary, Airdrie, Cochrane, Chestermere, Okotoks
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="font-bold text-text-main dark:text-white text-sm mb-4">Quick Links</h3>
+                <nav class="flex flex-col gap-2">
+                    <a href="about.html" class="text-text-muted text-sm hover:text-primary transition-colors">About Us</a>
+                    <a href="services.html" class="text-text-muted text-sm hover:text-primary transition-colors">Services</a>
+                    <a href="pricing.html" class="text-text-muted text-sm hover:text-primary transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-text-muted text-sm hover:text-primary transition-colors">Contact</a>
+                    <a href="#" class="text-text-muted text-sm hover:text-primary transition-colors">Careers</a>
+                </nav>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h3 class="font-bold text-text-main dark:text-white text-sm mb-4">Contact</h3>
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-center gap-2 text-text-muted text-sm">
+                        <span class="material-symbols-outlined text-lg">location_on</span>
+                        <span>Calgary, AB</span>
+                    </div>
+                    <a href="tel:+14035550123" class="flex items-center gap-2 text-text-muted text-sm hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-lg">phone</span>
+                        <span>(403) 555-0123</span>
+                    </a>
+                    <a href="mailto:hello@kapwacare.ca" class="flex items-center gap-2 text-text-muted text-sm hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-lg">mail</span>
+                        <span>hello@kapwacare.ca</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-gray-400 text-center">© 2025 KapwaCare. All rights reserved. | <a href="#" class="hover:text-primary">Privacy Policy</a></p>
+            <div class="flex gap-4">
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+
+        // Toggle icon
+        const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+        icon.textContent = isExpanded ? 'menu' : 'close';
+    });
+
+    // Dark mode toggle (can be enhanced with system preference detection)
+    function toggleDarkMode() {
+        document.documentElement.classList.toggle('dark');
+    }
+</script>
+</body>
+</html>

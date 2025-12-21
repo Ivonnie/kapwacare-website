@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Our Services - KapwaCare | Home Care Services in Calgary</title>
+    <meta name="description" content="Explore KapwaCare's comprehensive home care services: personal care, companionship, homemaking, respite care, dementia support, and more. Serving Calgary families."/>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="KapwaCare Services - Compassionate Home Care"/>
+    <meta property="og:description" content="Personal care, companionship, respite care, and specialized support for Calgary families."/>
+    <meta property="og:type" content="website"/>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <link rel="manifest" href="/site.webmanifest"/>
+    <meta name="theme-color" content="#28af60"/>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#28af60",
+                        "secondary": "#1d4ed8",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#131f18",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e2b24",
+                        "text-main": "#121714",
+                        "text-muted": "#668573",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Georgia", "serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white">
+
+<!-- Skip Navigation -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-lg z-50">Skip to main content</a>
+
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 bg-white/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
+    <div class="flex items-center justify-between px-4 py-3 max-w-6xl mx-auto w-full">
+        <a href="index.html" class="flex items-center">
+            <img src="images/kapwacare-wordmark.svg" alt="KapwaCare" class="h-8 w-auto" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
+            <a href="index.html" class="text-sm font-medium text-text-main dark:text-white hover:text-primary transition-colors">Home</a>
+            <a href="about.html" class="text-sm font-medium text-text-main dark:text-white hover:text-primary transition-colors">About</a>
+            <a href="services.html" class="text-sm font-medium text-primary">Services</a>
+            <a href="pricing.html" class="text-sm font-medium text-text-main dark:text-white hover:text-primary transition-colors">Pricing</a>
+            <a href="contact.html" class="text-sm font-medium text-text-main dark:text-white hover:text-primary transition-colors">Contact</a>
+            <a href="contact.html" class="bg-primary hover:bg-green-600 text-white font-semibold text-sm px-4 py-2 rounded-lg transition-colors">Free Assessment</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-text-main dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors" aria-label="Open menu">
+            <span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+        </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 px-4 py-4">
+        <div class="flex flex-col gap-3">
+            <a href="index.html" class="text-base font-medium text-text-main dark:text-white py-2">Home</a>
+            <a href="about.html" class="text-base font-medium text-text-main dark:text-white py-2">About</a>
+            <a href="services.html" class="text-base font-medium text-primary py-2">Services</a>
+            <a href="pricing.html" class="text-base font-medium text-text-main dark:text-white py-2">Pricing</a>
+            <a href="contact.html" class="text-base font-medium text-text-main dark:text-white py-2">Contact</a>
+            <a href="contact.html" class="bg-primary hover:bg-green-600 text-white font-bold text-base px-4 py-3 rounded-lg text-center transition-colors mt-2">Free Assessment</a>
+        </div>
+    </nav>
+</header>
+
+<main id="main-content">
+    <!-- Hero Section -->
+    <section class="relative w-full">
+        <div class="flex min-h-[320px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-8" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1200&q=80");'>
+            <div class="flex flex-col gap-3 text-center max-w-2xl">
+                <h1 class="text-white text-4xl md:text-5xl font-black leading-tight tracking-tight font-serif">
+                    Our Services
+                </h1>
+                <p class="text-white/90 text-lg md:text-xl font-medium leading-relaxed">
+                    Care solutions for every stage of life. Compassionate, reliable, and tech-enabled.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="py-12 px-4 max-w-4xl mx-auto">
+        <div class="flex flex-col gap-4">
+            <!-- Category 1: Daily Living Support -->
+            <details class="group bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden" open>
+                <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-2xl">accessibility_new</span>
+                        </div>
+                        <span>Daily Living Support</span>
+                    </div>
+                    <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-gray-500">expand_more</span>
+                </summary>
+                <div class="border-t border-gray-100 dark:border-gray-800 p-6">
+                    <p class="text-text-muted dark:text-gray-400 text-base leading-relaxed mb-6">
+                        Assistance with routine activities to maintain independence and dignity in your own home. Our caregivers become a trusted extension of your family.
+                    </p>
+
+                    <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Meal preparation & nutrition planning</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Personal hygiene & grooming assistance</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Light housekeeping & laundry</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Medication reminders & logs</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Mobility assistance</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Errands & grocery shopping</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-900/30 px-3 py-1 text-xs font-bold text-blue-700 dark:text-blue-300">
+                            98% Client Satisfaction
+                        </span>
+                        <span class="inline-flex items-center rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+                            Starting at $32/hr
+                        </span>
+                    </div>
+
+                    <a href="contact.html" class="inline-flex w-full md:w-auto items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-green-600 text-white text-sm font-bold transition-colors">
+                        Book Daily Living Support
+                    </a>
+                </div>
+            </details>
+
+            <!-- Category 2: Companionship -->
+            <details class="group bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-pink-100 dark:bg-pink-900/40 text-pink-600 dark:text-pink-300">
+                            <span class="material-symbols-outlined text-2xl">volunteer_activism</span>
+                        </div>
+                        <span>Companionship</span>
+                    </div>
+                    <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-gray-500">expand_more</span>
+                </summary>
+                <div class="border-t border-gray-100 dark:border-gray-800 p-6">
+                    <p class="text-text-muted dark:text-gray-400 text-base mb-6">
+                        Social engagement and emotional support to combat loneliness. Our companions provide meaningful connection through conversation, activities, and presence.
+                    </p>
+
+                    <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Conversation & social interaction</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Games, puzzles & hobbies</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Accompaniment to appointments</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Outings & community activities</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="inline-flex items-center rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+                            Starting at $32/hr
+                        </span>
+                    </div>
+
+                    <a href="contact.html" class="inline-flex w-full md:w-auto items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-green-600 text-white text-sm font-bold transition-colors">
+                        Book Companionship
+                    </a>
+                </div>
+            </details>
+
+            <!-- Category 3: Respite Care -->
+            <details class="group bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-300">
+                            <span class="material-symbols-outlined text-2xl">hourglass_top</span>
+                        </div>
+                        <span>Respite Care</span>
+                    </div>
+                    <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-gray-500">expand_more</span>
+                </summary>
+                <div class="border-t border-gray-100 dark:border-gray-800 p-6">
+                    <p class="text-text-muted dark:text-gray-400 text-base mb-6">
+                        Temporary relief for primary family caregivers. We care for your loved one so you can rest, work, or attend to other responsibilities with peace of mind.
+                    </p>
+
+                    <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Hourly, daily, or overnight care</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Vacation coverage</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Emergency backup care</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Caregiver burnout prevention</span>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="inline-flex w-full md:w-auto items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-green-600 text-white text-sm font-bold transition-colors">
+                        Book Respite Care
+                    </a>
+                </div>
+            </details>
+
+            <!-- Category 4: Personal Care -->
+            <details class="group bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300">
+                            <span class="material-symbols-outlined text-2xl">personal_injury</span>
+                        </div>
+                        <span>Personal Care</span>
+                    </div>
+                    <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-gray-500">expand_more</span>
+                </summary>
+                <div class="border-t border-gray-100 dark:border-gray-800 p-6">
+                    <p class="text-text-muted dark:text-gray-400 text-base mb-6">
+                        Hands-on assistance with personal hygiene and physical needs, delivered with dignity and respect by trained caregivers.
+                    </p>
+
+                    <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Bathing & shower assistance</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Dressing & grooming</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Toileting & incontinence care</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Transfer & mobility support</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="inline-flex items-center rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+                            Starting at $42/hr
+                        </span>
+                    </div>
+
+                    <a href="contact.html" class="inline-flex w-full md:w-auto items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-green-600 text-white text-sm font-bold transition-colors">
+                        Book Personal Care
+                    </a>
+                </div>
+            </details>
+
+            <!-- Category 5: Dementia & Memory Care -->
+            <details class="group bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300">
+                            <span class="material-symbols-outlined text-2xl">psychology</span>
+                        </div>
+                        <span>Dementia & Memory Care</span>
+                    </div>
+                    <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-gray-500">expand_more</span>
+                </summary>
+                <div class="border-t border-gray-100 dark:border-gray-800 p-6">
+                    <p class="text-text-muted dark:text-gray-400 text-base mb-6">
+                        Specialized care for clients with Alzheimer's, dementia, or other cognitive conditions. Our caregivers are trained in memory care techniques and compassionate communication.
+                    </p>
+
+                    <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Cognitive stimulation activities</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Safety monitoring</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Routine & structure support</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Wandering prevention</span>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="inline-flex w-full md:w-auto items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-green-600 text-white text-sm font-bold transition-colors">
+                        Book Memory Care
+                    </a>
+                </div>
+            </details>
+
+            <!-- Category 6: Post-Surgery Recovery -->
+            <details class="group bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-teal-100 dark:bg-teal-900/40 text-teal-600 dark:text-teal-300">
+                            <span class="material-symbols-outlined text-2xl">healing</span>
+                        </div>
+                        <span>Post-Surgery Recovery</span>
+                    </div>
+                    <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-gray-500">expand_more</span>
+                </summary>
+                <div class="border-t border-gray-100 dark:border-gray-800 p-6">
+                    <p class="text-text-muted dark:text-gray-400 text-base mb-6">
+                        Short-term care during your recovery from surgery or hospitalization. We help you heal faster at home with proper support.
+                    </p>
+
+                    <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Discharge planning coordination</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Medication management</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Mobility rehabilitation support</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            <span class="text-sm font-medium">Wound care observation</span>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="inline-flex w-full md:w-auto items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-green-600 text-white text-sm font-bold transition-colors">
+                        Book Recovery Care
+                    </a>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Who We Serve -->
+    <section class="py-12 px-4 bg-white dark:bg-background-dark">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-center mb-8 font-serif">Who We Serve</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl flex flex-col items-center text-center gap-3 border border-gray-100 dark:border-gray-800">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-3xl">elderly</span>
+                    </div>
+                    <span class="font-bold text-sm">Seniors</span>
+                    <span class="text-xs text-text-muted">Aging in Place</span>
+                </div>
+
+                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl flex flex-col items-center text-center gap-3 border border-gray-100 dark:border-gray-800">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-3xl">healing</span>
+                    </div>
+                    <span class="font-bold text-sm">Post-Op</span>
+                    <span class="text-xs text-text-muted">Surgery Recovery</span>
+                </div>
+
+                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl flex flex-col items-center text-center gap-3 border border-gray-100 dark:border-gray-800">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-3xl">medical_services</span>
+                    </div>
+                    <span class="font-bold text-sm">Chronic Care</span>
+                    <span class="text-xs text-text-muted">Long-term Support</span>
+                </div>
+
+                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl flex flex-col items-center text-center gap-3 border border-gray-100 dark:border-gray-800">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-3xl">child_friendly</span>
+                    </div>
+                    <span class="font-bold text-sm">New Parents</span>
+                    <span class="text-xs text-text-muted">Postpartum Help</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-4 bg-surface-light dark:bg-surface-dark">
+        <div class="max-w-2xl mx-auto text-center">
+            <div class="p-4 bg-primary/10 rounded-full inline-flex mb-6">
+                <span class="material-symbols-outlined text-primary text-4xl">assignment_add</span>
+            </div>
+            <h2 class="text-2xl font-bold mb-4 font-serif">Not Sure What You Need?</h2>
+            <p class="text-text-muted dark:text-gray-400 mb-8 max-w-md mx-auto">
+                Our care coordinators can help assess your needs and recommend the right care plan for your family. Schedule a free consultation today.
+            </p>
+            <a href="contact.html" class="inline-flex items-center justify-center rounded-lg h-14 px-10 bg-text-main dark:bg-white text-white dark:text-text-main text-base font-bold transition-transform active:scale-95">
+                Tell Us About Your Situation
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-50 dark:bg-gray-900 pt-12 pb-8 px-4 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+            <div class="md:col-span-2">
+                <div class="mb-4">
+                    <img src="images/kapwacare-wordmark.svg" alt="KapwaCare" class="h-8 w-auto" />
+                </div>
+                <p class="text-text-muted text-sm leading-relaxed max-w-sm">
+                    Providing compassionate, high-quality home care services to families in Calgary and surrounding areas.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-text-main dark:text-white text-sm mb-4">Quick Links</h3>
+                <nav class="flex flex-col gap-2">
+                    <a href="about.html" class="text-text-muted text-sm hover:text-primary transition-colors">About Us</a>
+                    <a href="services.html" class="text-text-muted text-sm hover:text-primary transition-colors">Services</a>
+                    <a href="pricing.html" class="text-text-muted text-sm hover:text-primary transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-text-muted text-sm hover:text-primary transition-colors">Contact</a>
+                </nav>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-text-main dark:text-white text-sm mb-4">Contact</h3>
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-center gap-2 text-text-muted text-sm">
+                        <span class="material-symbols-outlined text-lg">location_on</span>
+                        <span>Calgary, AB</span>
+                    </div>
+                    <a href="tel:+14035550123" class="flex items-center gap-2 text-text-muted text-sm hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-lg">phone</span>
+                        <span>(403) 555-0123</span>
+                    </a>
+                    <a href="mailto:hello@kapwacare.ca" class="flex items-center gap-2 text-text-muted text-sm hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-lg">mail</span>
+                        <span>hello@kapwacare.ca</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-gray-200 dark:border-gray-800 text-center">
+            <p class="text-xs text-gray-400">© 2025 KapwaCare. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+        icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+</script>
+</body>
+</html>
