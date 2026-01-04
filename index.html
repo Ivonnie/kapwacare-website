@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html class="light" lang="en-CA">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>KapwaCare - Compassionate Home Care in Calgary | Kapwa Philosophy</title>
-    <meta name="description" content="KapwaCare provides compassionate, tech-enabled home care services in Calgary. Personal care, companionship, respite care, and more. Rooted in the Filipino philosophy of Kapwa - shared humanity."/>
-    <meta name="keywords" content="home care Calgary, senior care, personal care, companionship, respite care, Filipino care, Kapwa"/>
+    <title>KapwaCare Calgary | Home Care Services in Alberta, Canada</title>
+    <meta name="description" content="KapwaCare Calgary provides compassionate home care services in Calgary, Alberta, Canada. Senior care, personal care, companionship & respite care. Filipino-Canadian owned. Call (403) 830-9600."/>
+    <meta name="keywords" content="home care Calgary, Calgary home care, senior care Calgary Alberta, personal care Calgary, companionship Calgary, respite care Alberta, Filipino care Calgary, home care Alberta Canada"/>
+
+    <!-- Geo-targeting for Canada/Alberta -->
+    <meta name="geo.region" content="CA-AB"/>
+    <meta name="geo.placename" content="Calgary"/>
+    <meta name="geo.position" content="51.0447;-114.0719"/>
+    <meta name="ICBM" content="51.0447, -114.0719"/>
+    <link rel="canonical" href="https://kapwacare.ca/"/>
+    <link rel="alternate" hreflang="en-CA" href="https://kapwacare.ca/"/>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="KapwaCare - Compassionate Home Care in Calgary"/>
-    <meta property="og:description" content="Care rooted in shared humanity. Personal care, companionship, and respite services for Calgary families."/>
+    <meta property="og:title" content="KapwaCare Calgary | Home Care Services in Alberta, Canada"/>
+    <meta property="og:description" content="Calgary's compassionate home care agency. Personal care, companionship & respite services for Alberta families. Filipino-Canadian owned."/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://kapwacare.ca"/>
+    <meta property="og:url" content="https://kapwacare.ca/"/>
+    <meta property="og:locale" content="en_CA"/>
+    <meta property="og:site_name" content="KapwaCare Calgary"/>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
@@ -65,26 +75,69 @@
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 
-    <!-- Schema.org LocalBusiness markup -->
+    <!-- Schema.org LocalBusiness markup - Critical for local SEO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "KapwaCare",
-        "description": "Compassionate, tech-enabled home care services in Calgary",
+        "@type": "HomeHealthCareService",
+        "name": "KapwaCare - Calgary Home Care",
+        "alternateName": "KapwaCare Calgary",
+        "description": "Filipino-Canadian owned home care agency providing compassionate, culturally-informed care services to seniors and families in Calgary, Alberta, Canada.",
         "url": "https://kapwacare.ca",
-        "telephone": "(403) 830-9600",
+        "telephone": "+1-403-830-9600",
         "email": "hello@kapwacare.ca",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "123 Care Ave SW",
+            "streetAddress": "15-1305 33 Street NE",
             "addressLocality": "Calgary",
             "addressRegion": "AB",
-            "postalCode": "T2P 1J9",
+            "postalCode": "T2A 5P1",
             "addressCountry": "CA"
         },
-        "areaServed": "Calgary, Alberta",
-        "priceRange": "$$"
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "51.0747",
+            "longitude": "-113.9999"
+        },
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Calgary",
+                "containedInPlace": {
+                    "@type": "AdministrativeArea",
+                    "name": "Alberta",
+                    "containedInPlace": {
+                        "@type": "Country",
+                        "name": "Canada"
+                    }
+                }
+            },
+            {
+                "@type": "City",
+                "name": "Airdrie"
+            },
+            {
+                "@type": "City",
+                "name": "Cochrane"
+            },
+            {
+                "@type": "City",
+                "name": "Chestermere"
+            },
+            {
+                "@type": "City",
+                "name": "Okotoks"
+            }
+        ],
+        "serviceType": ["Home Care", "Senior Care", "Companion Care", "Personal Care", "Respite Care", "Dementia Care"],
+        "priceRange": "$$",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "18:00"
+        },
+        "sameAs": []
     }
     </script>
 </head>
